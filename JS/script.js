@@ -1,3 +1,4 @@
+window.addEventListener("load", function(){
 function substituteDigits(number) {
     const numberString = number.toString();
     const substitutedString = "";
@@ -6,12 +7,12 @@ function substituteDigits(number) {
       const digit = numberString[i];
       const substitute = "";
   
-      if (digit === "3") {
-        substitute = "Won't you be my neighbor?";
+      if (digit === "1") {
+        substitute = "Beep!";
       } else if (digit === "2") {
         substitute = "Boop!";
-      } else if (digit === "1") {
-        substitute = "Beep!";
+      } else if (digit === "3") {
+        substitute = "Won't you be my neighbor?";
       } else {
         substitute = digit;
       }
@@ -25,26 +26,14 @@ function substituteDigits(number) {
   function substitute() {
     const numberInput = document.getElementById("numberInput");
     const resultElement = document.getElementById("result");
-    resultElement.innerHTML = ""; // Clear previous results
+    resultElement.innerHTML = "";
   
     const number = parseInt(numberInput.value);
-    const resultList = [];
   
     for (const i = 0; i <= number; i++) {
       const substitutedNumber = substituteDigits(i);
-      resultList.push(substitutedNumber);
-    }
-  
-    displayResult(resultList);
-  }
-  
-  function displayResult(resultList) {
-    const resultElement = document.getElementById("result");
-  
-    resultList.forEach(function(item) {
       const listItem = document.createElement("li");
-      listItem.textContent = item;
+      listItem.textContent = substitutedNumber;
       resultElement.appendChild(listItem);
-    });
-  }
-  
+    }
+  }})
