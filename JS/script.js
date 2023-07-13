@@ -27,5 +27,16 @@ function substituteDigits(number) {
       const listItem = document.createElement("li");
       listItem.textContent = substitutedNumber;
       resultElement.appendChild(listItem);
+      
     }
   }
+
+window.addEventListener("load",function(){
+
+  const form = document.getElementById("confirm")
+  form.addEventListener("submit",function(event){
+    event.preventDefault();
+    substitute();
+  })
+
+})
